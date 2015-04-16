@@ -12,6 +12,7 @@
   "scripts": {
     "test": "nodeunit tests"
   },
+  "engines": {"node": ">=0.10.x"},
   "repository": {
     "type": "git",
     "url": "git://github.com/fastest963/node-bufferConcatLimit.git"
