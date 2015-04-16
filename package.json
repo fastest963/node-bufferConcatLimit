@@ -1,0 +1,23 @@
+{
+  "name": "buffer-concat-limit",
+  "version": "0.0.1",
+  "description": "Helper method to concat 2 buffers with a tail limit",
+  "main": "concat.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "nodeunit": "^0.9.1"
+  },
+  "scripts": {
+    "test": "nodeunit tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fastest963/node-bufferConcatLimit.git"
+  },
+  "keywords": ["buffer", "concat", "limit"],
+  "author": "James Hartig <fastest963@gmail.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
