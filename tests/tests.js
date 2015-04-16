@@ -1,4 +1,29 @@
-var bufferConcatLimit = require('../concat.js');
+var assert = require('assert'),
+    bufferConcatLimit = require('../concat.js');
+
+//Node 0.10.x doesn't have equals
+if (typeof Buffer.prototype.equals !== 'function') {
+    Buffer.prototype.equals = function(buf) {
+        if (this.length != buf.length) {
+            return false;
+        }
+        for (var i = 0; i < this.length; i++) {
+            if (this[i] !== buf[i]) {
+                return false;
+            }
+        }
+        return true;
+    };
+}
+(function() {
+    var a = new Buffer(3),
+        b = new Buffer(3);
+    a.fill('a');
+    b.fill('b');
+    assert.equal(a.equals(b), false);
+    b.fill('a');
+    assert.equal(a.equals(b), true);
+}())
 
 exports.noLimit = function(test) {
     var bufOne = new Buffer(100),
